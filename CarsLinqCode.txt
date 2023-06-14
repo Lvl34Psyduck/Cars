@@ -1,0 +1,59 @@
+/*var cars = ProcessFile("fuel.csv");
+            var manufacturers = ProcessManufacturers("manufacturers.csv");
+
+            var query =
+                from manufacturer in manufacturers
+                join car in cars on manufacturer.Name equals car.Manufacturer
+                    into carGroup
+                orderby manufacturer.Name
+                select new
+                {
+                    Manufacturer = manufacturer,
+                    Cars = carGroup
+                } into result
+                group result by result.Manufacturer.Headquarters;
+
+            foreach (var group in query)
+            {
+                Console.WriteLine($"{group.Key}");
+                foreach (var car in group.SelectMany(g => g.Cars)
+                                         .OrderByDescending(c => c.Combined)
+                                         .Take(3))
+                {
+                    Console.WriteLine($"\t{car.Name} : {car.Combined}");
+                }
+            }
+
+
+            var query = cars.Where(c => c.Manufacturer == "BMW" && c.Year == 2016)
+             .OrderByDescending(c => c.Combined)
+             .ThenBy(c => c.Name);
+
+            var query =
+                from car in cars
+                join manufacturer in manufacturers
+                    on car.Manufacturer equals manufacturer.Name
+                orderby car.Combined descending, car.Name ascending
+                select new
+                {
+                    manufacturer.Headquarters,
+                    car.Name,
+                    car.Combined
+                };
+
+            var query2 =
+                cars.Join(manufacturers,
+                                c => c.Manufacturer,
+                                m => m.Name, (c, m) => new
+                                {
+                                    m.Headquarters
+                                    c.Name
+                                    c.Combined
+                                })
+                    .Orderbydescending(c => c.Combined)
+                    .Thenby(c => c.Name);
+                
+                foreach (var car in query.Take(10))
+            {
+                Console.WriteLine($"{car.Headquarters}  {car.Name} : {car.Combined}");
+            }*/
